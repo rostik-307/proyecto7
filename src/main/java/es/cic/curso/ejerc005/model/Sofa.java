@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class Venta {
+public class Sofa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int numeroEntradas;
-    private LocalDateTime fechaHoraVenta;
+    private LocalDateTime fechaHoraSofa;
     private double precioPorEntrada;
     private int numeroEntradasDescuentoJoven;
     private boolean descuentoGrupo;
@@ -39,11 +39,11 @@ public class Venta {
     public void setNumeroEntradas(int numeroEntradas) {
         this.numeroEntradas = numeroEntradas;
     }
-    public LocalDateTime getFechaHoraVenta() {
-        return fechaHoraVenta;
+    public LocalDateTime getFechaHoraSofa() {
+        return fechaHoraSofa;
     }
-    public void setFechaHoraVenta(LocalDateTime fechaHoraVenta) {
-        this.fechaHoraVenta = fechaHoraVenta;
+    public void setFechaHoraSofa(LocalDateTime fechaHoraSofa) {
+        this.fechaHoraSofa = fechaHoraSofa;
     }
     public double getPrecioPorEntrada() {
         return precioPorEntrada;
@@ -91,7 +91,7 @@ public class Venta {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        Venta other = (Venta) obj;
+        Sofa other = (Sofa) obj;
         if (id == null) {
             if (other.id != null) {
                 return false;
@@ -102,7 +102,7 @@ public class Venta {
         return true;
     }
     public String toString() {
-        return "Venta [id=" + id + ", numeroEntradas=" + numeroEntradas + ", fechaHoraVenta=" + fechaHoraVenta
+        return "Sofa [id=" + id + ", numeroEntradas=" + numeroEntradas + ", fechaHoraSofa=" + fechaHoraSofa
                 + ", precioPorEntrada=" + precioPorEntrada + ", numeroEntradasDescuentoJoven="
                 + numeroEntradasDescuentoJoven + ", descuentoGrupo=" + descuentoGrupo + ", salaId=" + salaId
                 + ", sesionId=" + sesionId + ", precioTotal=" + precioTotal + "]";
