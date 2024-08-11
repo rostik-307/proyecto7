@@ -8,6 +8,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -19,14 +20,14 @@ public class SecurityConfigTest {
 
     @Test
     public void whenAccessActuatorWithoutAuthentication_thenUnauthorized() throws Exception {
-        mockMvc.perform(get("/actuator"))
+        mockMvc.perform(put("/actuator"))
             .andExpect(status().isUnauthorized());
     }
 
     @Test
     @WithMockUser
     public void whenAccessActuatorWithAuthentication_thenOk() throws Exception {
-        mockMvc.perform(get("/actuator"))
+        mockMvc.perform(put("/actuator"))
             .andExpect(status().isOk());
     }
 }
